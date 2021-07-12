@@ -6,23 +6,24 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_im_nombreMedicamento"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:text="Informacion medicamento"
-        android:layout_gravity="center"
-        android:layout_marginTop="80dp"
+        android:text="Ibuprofeno"
+        android:gravity="center"
+        android:textColor="@color/black"
         android:layout_weight="1"
         android:textAlignment="center"
-        android:textSize="30dp"
-        />
+        android:textSize="30dp" />
 
     <TextView
-
+        android:id="@+id/tv_im_descripcion"
         android:layout_width="match_parent"
         android:textAlignment="center"
         android:layout_height="0dp"
+        android:textColor="@color/black"
         android:paddingHorizontal="25dp"
+        android:paddingVertical="15dp"
         android:text="El ibuprofeno de venta con receta se presenta en forma de tabletas para administrarse por vía oral. Por lo común, se toma tres a cuatro veces al día para la artritis, o cada 4 a 6 horas, según sea necesario, para el dolor. El ibuprofeno de venta libre se presenta en forma de tabletas normales, tabletas masticables, suspensión (líquido) y gotas (líquido concentrado). En general, los adultos y niños mayores de 12 años pueden tomar el ibuprofeno de venta libre cada 4 a 6 horas, según sea necesario, para el dolor o la fiebre. Por regla general, a los niños y los bebés se les puede dar ibuprofeno de venta libre cada 6 a 8 horas para el dolor o la fiebre, según sea necesario, pero no más de 4 dosis cada 24 horas. El ibuprofeno se puede tomar con alimentos o con leche para prevenir el malestar estomacal. Si está tomando ibuprofeno con regularidad, debe tomarlo a la(s) misma(s) hora(s) todos los días. Siga atentamente las instrucciones del empaque o la etiqueta de la receta y pídales a su médico o a su farmacéutico que le expliquen cualquier cosa que no entienda. Tome el ibuprofeno según lo indicado. No aumente ni disminuya la dosis, ni la tome con más frecuencia que la indicada en la etiqueta del envase o en la receta de su médico.
 
 El ibuprofeno viene solo y en combinación con otros medicamentos. Algunos de esos productos mixtos se venden exclusivamente con receta, pero muchos otros son de venta libre y se usan para tratar la tos, los síntomas del resfriado y otras afecciones. Si su médico le recetó algún medicamento que contiene ibuprofeno, tenga cuidado de no tomar ningún otro medicamento de venta sin receta que también contenga ibuprofeno.
@@ -55,10 +56,12 @@ A veces se receta este medicamento para otros usos; pídales más información a
         />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tv_im_periodico"
         android:layout_width="match_parent"
-        android:layout_weight="0.5"
+        android:layout_weight="0.7"
         android:gravity="center"
+        android:textSize="17sp"
+        android:textColor="@color/black"
         android:layout_height="0dp"
         android:text="Periódico (24 h.): 10, 16, 20, 2 ,6, 8.30" />
 

@@ -5,25 +5,29 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tv_b_titulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/black"
         android:text="Bienvenido al app de medicinas"
         android:layout_gravity="center"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="160dp"
         android:textAlignment="center"
-        android:textSize="30dp"
-        />
+        android:textSize="35sp" />
+
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/bt_b_continuar"
+        android:backgroundTint="#FF5117"
+        android:textColor="@color/white"
+        android:layout_width="220dp"
+        android:layout_height="70dp"
         android:layout_gravity="center"
         android:layout_marginTop="225dp"
-        android:textSize="20sp"
+        android:textSize="19sp"
         android:padding="15dp"
-        android:text="EMPEZAR"
+        android:text="Continuar"
         android:textAlignment="center" />
 
 
