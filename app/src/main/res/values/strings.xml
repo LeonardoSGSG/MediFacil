@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MediFacil</string>
+    <string name="title_medi">Medicamentos</string>
+    <string name="title_nuevo">Nuevo Medicamento</string>
+</resources>

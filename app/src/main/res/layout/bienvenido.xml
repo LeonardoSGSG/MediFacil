@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_b_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:textColor="@color/black"
+        android:text="Bienvenido a MediFácil"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:textSize="36sp" />
+
+    <Button
+        android:id="@+id/bt_b_continuar"
+        android:backgroundTint="#FF5117"
+        android:textColor="@color/white"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:layout_marginTop="40dp"
+        android:textSize="22sp"
+        android:text="Continuar"
+        android:textAlignment="center" />
+
+</LinearLayout>

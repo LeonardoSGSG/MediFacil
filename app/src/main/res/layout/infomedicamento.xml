@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_im_nombreMedicamento"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="Ibuprofeno"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:textSize="30dp" />
+
+    <TextView
+        android:id="@+id/tv_im_descripcion"
+        android:layout_width="match_parent"
+        android:textAlignment="center"
+        android:layout_height="0dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:paddingHorizontal="25dp"
+        android:paddingVertical="15dp"
+        android:text="El ibuprofeno de venta con receta se presenta en forma de tabletas para administrarse por vía oral. Por lo común, se toma tres a cuatro veces al día para la artritis, o cada 4 a 6 horas, según sea necesario, para el dolor. El ibuprofeno de venta libre se presenta en forma de tabletas normales, tabletas masticables, suspensión (líquido) y gotas (líquido concentrado). En general, los adultos y niños mayores de 12 años pueden tomar el ibuprofeno de venta libre cada 4 a 6 horas, según sea necesario, para el dolor o la fiebre. Por regla general, a los niños y los bebés se les puede dar ibuprofeno de venta libre cada 6 a 8 horas para el dolor o la fiebre, según sea necesario, pero no más de 4 dosis cada 24 horas. El ibuprofeno se puede tomar con alimentos o con leche para prevenir el malestar estomacal. Si está tomando ibuprofeno con regularidad, debe tomarlo a la(s) misma(s) hora(s) todos los días. Siga atentamente las instrucciones del empaque o la etiqueta de la receta y pídales a su médico o a su farmacéutico que le expliquen cualquier cosa que no entienda. Tome el ibuprofeno según lo indicado. No aumente ni disminuya la dosis, ni la tome con más frecuencia que la indicada en la etiqueta del envase o en la receta de su médico.
+
+El ibuprofeno viene solo y en combinación con otros medicamentos. Algunos de esos productos mixtos se venden exclusivamente con receta, pero muchos otros son de venta libre y se usan para tratar la tos, los síntomas del resfriado y otras afecciones. Si su médico le recetó algún medicamento que contiene ibuprofeno, tenga cuidado de no tomar ningún otro medicamento de venta sin receta que también contenga ibuprofeno.
+
+Trague la tableta entera; no la mastique ni triture.
+
+Si está en busca de un producto para tratar la tos o los síntomas del resfriado, pídales a su médico o a su farmacéutico que le recomienden el producto más indicado para usted. Lea detenidamente las etiquetas de los medicamentos de venta libre antes de usar dos o más productos al mismo tiempo. Estos productos pueden contener los mismos ingredientes activos, de modo que tomarlos juntos podría causarle una sobredosis. Esto es particularmente importante si le va a dar medicamentos contra la tos y el resfriado a un niño.
+
+Los productos combinados para la tos y el resfriado, entre ellos los que contienen ibuprofeno, pueden provocar efectos secundarios graves e incluso mortales a los niños de corta edad. No le dé estos productos a ningún niño menor de 4 años de edad. Si les da estos productos a niños de 4 a 11 años de edad, hágalo con precaución y siga al pie de la letra las indicaciones del envase.
+
+Si le está dando ibuprofeno o un producto mixto con ibuprofeno a un niño, lea detenidamente la etiqueta del envase para cerciorarse de que sea un producto adecuado para la edad del niño. No les dé a los niños productos de ibuprofeno que estén hechos para adultos.
+
+Antes de darle un producto con ibuprofeno a un niño, revise la etiqueta del envase para ver qué cantidad de medicamento debe proporcionarle. Déle la dosis que coincida con la edad del niño en la tabla. Pregúntele al pediatra si tiene dudas sobre cuánto medicamento darle al niño.
+
+Agite bien la suspensión y las gotas antes de cada uso para mezclar uniformemente el medicamento. Use la taza medidora que viene con el producto para medir cada dosis de la suspensión, o el gotero del frasco para medir cada dosis de las gotas.
+
+Las tabletas masticables pueden causar ardor en la boca o la garganta. Acompañe las tabletas masticables con alimentos o agua.
+
+Deje de tomar el ibuprofeno sin receta y llame a su médico si los síntomas empeoran, si se presentan síntomas nuevos o inesperados, si la parte de su cuerpo que estaba dolorida se enrojece o inflama, si el dolor dura más de 10 días o si la fiebre persiste por más de 3 días. Deje de darle el ibuprofeno sin receta a su hijo y llame al pediatra si el niño no empieza a sentirse mejor durante las primeras 24 horas de tratamiento. Asimismo, deje de darle el ibuprofeno sin receta a su hijo y llame al pediatra si el niño presenta nuevos síntomas, como enrojecimiento o hinchazón de la parte dolorida del cuerpo, o si el dolor o la fiebre empeoran o persisten por más de 3 días.
+
+No le dé ibuprofeno de venta libre a un niño con dolor de garganta intenso o persistente, o que venga acompañado de fiebre, dolor de cabeza, náuseas o vómitos. Llame de inmediato al pediatra, ya que esos síntomas pueden ser signos de una afección más grave.
+
+¿Qué otro uso se le da a este medicamento?
+A veces se usa también el ibuprofeno para tratar la espondilitis anquilosante (artritis que afecta principalmente la columna vertebral), la artritis gotosa (dolor articular debido a la acumulación de ciertas sustancias en las articulaciones) y la artritis psoriásica (artritis que ocurre junto con una enfermedad crónica de la piel que provoca descamación e inflamación). Consulte a su médico sobre los riesgos de usar este medicamento para tratar su afección.
+
+A veces se receta este medicamento para otros usos; pídales más información a su médico o a su farmacéutico."
+        android:layout_weight="6"
+        android:layout_gravity="center"
+        android:scrollbars="vertical"
+        />
+
+    <TextView
+        android:id="@+id/tv_im_periodico"
+        android:layout_width="match_parent"
+        android:layout_weight="0.7"
+        android:gravity="center"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:layout_height="0dp"
+        android:text="Periódico (24 h.): 10, 16, 20, 2 ,6, 8.30" />
+
+
+</LinearLayout>

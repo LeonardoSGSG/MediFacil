@@ -1,0 +1,2 @@
+rootProject.name = "MediFacil2"
+include ':app'
