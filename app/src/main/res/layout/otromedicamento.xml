@@ -21,7 +21,7 @@
         android:layout_height="80dp"
         android:layout_below="@id/tv_om_titulo"
         android:orientation="horizontal"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:paddingHorizontal="15dp">
 
         <TextView
@@ -39,7 +39,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:scrollbars="vertical"
             android:textColor="@color/black"
             android:hint="Nombre del medicamento"
             android:inputType="text"
@@ -50,7 +49,7 @@
     <LinearLayout
         android:id="@+id/ll_om_ll2"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="140dp"
         android:layout_below="@id/ll_om_ll1"
         android:orientation="horizontal"
         android:layout_marginTop="25dp"
@@ -71,10 +70,11 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="2"
-            android:scrollbars="vertical"
             android:textColor="@color/black"
+            android:scrollbars="vertical"
+            android:gravity="start"
             android:hint="Descripción del medicamento"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:textSize="17sp"/>
 
     </LinearLayout>
@@ -105,8 +105,9 @@
             android:layout_weight="2"
             android:scrollbars="vertical"
             android:textColor="@color/black"
+            android:gravity="start"
             android:hint="ej. 9, 14.30 (para 9am y 2pm)"
-            android:inputType="text"
+            android:inputType="textMultiLine"
             android:textSize="17sp"/>
 
     </LinearLayout>

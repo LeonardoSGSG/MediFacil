@@ -51,7 +51,7 @@ No le dé ibuprofeno de venta libre a un niño con dolor de garganta intenso o p
 A veces se usa también el ibuprofeno para tratar la espondilitis anquilosante (artritis que afecta principalmente la columna vertebral), la artritis gotosa (dolor articular debido a la acumulación de ciertas sustancias en las articulaciones) y la artritis psoriásica (artritis que ocurre junto con una enfermedad crónica de la piel que provoca descamación e inflamación). Consulte a su médico sobre los riesgos de usar este medicamento para tratar su afección.
 
 A veces se receta este medicamento para otros usos; pídales más información a su médico o a su farmacéutico."
-        android:layout_weight="6"
+        android:layout_weight="5"
         android:layout_gravity="center"
         android:scrollbars="vertical"
         />
@@ -59,7 +59,7 @@ A veces se receta este medicamento para otros usos; pídales más información a
     <TextView
         android:id="@+id/tv_im_periodico"
         android:layout_width="match_parent"
-        android:layout_weight="0.7"
+        android:layout_weight="0.9"
         android:gravity="center"
         android:textSize="17sp"
         android:textColor="@color/black"

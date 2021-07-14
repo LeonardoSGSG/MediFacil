@@ -34,7 +34,9 @@ class AnadirMedicamentosFragment: Fragment(), OnPredefinidaItemClickListener, On
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvPredefinidas = requireView().findViewById(R.id.rv_am_medicamentospredefinidos)
+        /*Descomentar esto para utilizar los servicios del api y traer las predefinidass
         PredefinidasManager.getInstance().getPredefinidas(this)
+        */
         requireView().findViewById<Button>(R.id.bt_am_otromedicamento).setOnClickListener {
             val intent = Intent(requireContext(), OtroMedicamentoActivity::class.java)
             startActivity(intent)
