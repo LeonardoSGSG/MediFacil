@@ -4,5 +4,5 @@ data class Medicamentos(
     val nombre: String,
     val desc: String,
     val imagen: String,
-    val id: String
+    val id: Int
 )

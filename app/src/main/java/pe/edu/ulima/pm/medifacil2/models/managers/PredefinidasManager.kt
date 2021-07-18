@@ -1,7 +1,12 @@
 package pe.edu.ulima.pm.medifacil2.models.managers
 
+import android.content.Context
+import androidx.room.Room
+import pe.edu.ulima.pm.medifacil2.models.beans.Medicamentos
 import pe.edu.ulima.pm.medifacil2.models.beans.Predefinidas
 import pe.edu.ulima.pm.medifacil2.models.dao.PredefinidasService
+import pe.edu.ulima.pm.medifacil2.models.persistencia.AppDatabase
+import pe.edu.ulima.pm.medifacil2.models.persistencia.entities.Medicamento
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -41,6 +46,44 @@ class PredefinidasManager {
                 callback.onError(t.message!!)
             }
         })
+    }
+
+    fun saveMedicamentos(context: Context, medicamentos: ArrayList<Medicamentos>, id: Int){
+        val db = Room.databaseBuilder(context.applicationContext, AppDatabase::class.java,"mediFacil").fallbackToDestructiveMigration().build()
+        Thread{
+            val medDao = db.MedicamentoDAO()
+            medicamentos.forEach{ m : Medicamentos ->
+                medDao.insert(
+                    Medicamento(
+                        0,
+                        m.nombre,
+                        m.desc,
+                        m.imagen
+                    )
+                )
+            }
+            db.close()
+        }.start()
+    }
+
+    fun getMedicamentosRoom(context: Context, id: Int, callback: (ArrayList<Medicamentos>) -> Unit){
+        val db = Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, "mediFacil").fallbackToDestructiveMigration().build()
+        Thread{
+            val medDao = db.MedicamentoDAO()
+            val medList = ArrayList<Medicamentos>()
+            medDao.findAll().forEach{ m : Medicamento ->
+                medList.add(
+                    Medicamentos(
+                        m.nombre,
+                        m.desc,
+                        m.imagen,
+                        m.id
+                )
+                )
+
+            }
+            callback(medList)
+        }.start()
     }
 
 }
