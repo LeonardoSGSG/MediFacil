@@ -86,4 +86,23 @@ class PredefinidasManager {
         }.start()
     }
 
+    fun getMedicamentosRoomPorId(context: Context, id: Int, callback: (Medicamentos) -> Unit){
+        val db = Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, "mediFacil").fallbackToDestructiveMigration().build()
+        Thread{
+            val medDao = db.MedicamentoDAO()
+            val medList = ArrayList<Medicamentos>()
+            medDao.findByMed(id).forEach{ m : Medicamento ->
+                medList.add(
+                    Medicamentos(
+                        m.nombre,
+                        m.desc,
+                        m.imagen,
+                        m.id
+                    )
+                )
+            }
+            callback(medList[0])
+        }.start()
+    }
+
 }

@@ -10,7 +10,7 @@ interface medicamentoDAO {
     @Query("SELECT * FROM Medicamento")
     fun findAll() : List<Medicamento>
     @Query("SELECT * FROM Medicamento where id = :id")
-    fun findByMed(id: Int)
+    fun findByMed(id: Int) : List<Medicamento>
     @Insert
     fun insert(med: Medicamento)
 }
