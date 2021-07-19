@@ -1,29 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tv_om_titulo"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:text="Añadir medicamento"
+        android:layout_weight="1"
         android:textColor="@color/black"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:textAlignment="center"
-        android:textSize="40sp" />
+        android:gravity="center"
+        android:textSize="35sp" />
 
     <LinearLayout
         android:id="@+id/ll_om_ll1"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@id/tv_om_titulo"
+        android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp"
+        android:layout_weight="1"
         android:paddingHorizontal="15dp">
-
         <TextView
             android:id="@+id/tv_om_nombre"
             android:layout_width="0dp"
@@ -43,18 +41,16 @@
             android:hint="Nombre del medicamento"
             android:inputType="text"
             android:textSize="17sp"/>
-
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll_om_ll2"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:layout_below="@id/ll_om_ll1"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
         android:orientation="horizontal"
-        android:layout_marginTop="25dp"
         android:paddingHorizontal="15dp">
-
         <TextView
             android:id="@+id/tv_om_descripcion"
             android:layout_width="0dp"
@@ -72,7 +68,6 @@
             android:layout_weight="2"
             android:textColor="@color/black"
             android:scrollbars="vertical"
-            android:gravity="start"
             android:hint="Descripción del medicamento"
             android:inputType="textMultiLine"
             android:textSize="17sp"/>
@@ -82,10 +77,10 @@
     <LinearLayout
         android:id="@+id/ll_om_ll3"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@id/ll_om_ll2"
+        android:layout_height="0dp"
         android:orientation="horizontal"
-        android:layout_marginTop="25dp"
+        android:layout_weight="1"
+        android:gravity="center"
         android:paddingHorizontal="15dp">
 
         <TextView
@@ -95,8 +90,8 @@
             android:gravity="center_vertical"
             android:textColor="@color/black"
             android:text="Periódico (24h):"
-            android:textSize="18sp"
-            android:layout_weight="1.2"/>
+            android:textSize="16sp"
+            android:layout_weight="1"/>
 
         <EditText
             android:id="@+id/et_om_periodico"
@@ -105,22 +100,26 @@
             android:layout_weight="2"
             android:scrollbars="vertical"
             android:textColor="@color/black"
-            android:gravity="start"
             android:hint="ej. 9, 14.30 (para 9am y 2pm)"
             android:inputType="textMultiLine"
             android:textSize="17sp"/>
-
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_om_imagenMedicamento"
+        android:contentDescription="Medicamento"
+        android:layout_width="match_parent"
+        android:paddingHorizontal="15dp"
+        android:layout_height="0dp"
+        android:layout_weight="3"/>
 
     <LinearLayout
         android:id="@+id/ll_om_ll4"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_below="@id/ll_om_ll3"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
         android:orientation="horizontal"
-        android:layout_marginTop="30dp"
         android:paddingHorizontal="15dp">
-
         <Button
             android:id="@+id/bt_om_cancelar"
             android:layout_width="0dp"
@@ -133,7 +132,6 @@
             android:text="Cancelar"
             android:layout_weight="1"
             style="?android:attr/buttonBarButtonStyle" />
-
         <Button
             android:id="@+id/bt_om_añadir"
             android:layout_width="0dp"
@@ -146,9 +144,8 @@
             android:layout_marginHorizontal="15dp"
             android:layout_weight="1"
             style="?android:attr/buttonBarButtonStyle" />
-
     </LinearLayout>
 
 
 
-</RelativeLayout>
+</LinearLayout>

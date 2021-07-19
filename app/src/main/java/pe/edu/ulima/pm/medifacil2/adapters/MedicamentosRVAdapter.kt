@@ -1,6 +1,7 @@
 package pe.edu.ulima.pm.medifacil2.adapters
 
 import android.content.Context
+import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -53,12 +54,16 @@ class MedicamentosRVAdapter: RecyclerView.Adapter<MedicamentosRVAdapter.MyViewHo
         holder.tvNombre!!.text = medicamento.nombre
         holder.tvId!!.text = medicamento.id.toString()
 
+        if(medicamento.imagen == "a"){
+            holder.ivImagen!!.setImageResource(R.mipmap.ic_launcher)
+        } else{
+            val takenImage = BitmapFactory.decodeFile(medicamento.imagen)
+            holder.ivImagen!!.setImageBitmap(takenImage)
+        }
         /*Glide.with(context!!).load(medicamento.imagen)
             .centerCrop()
             .placeholder(R.mipmap.ic_launcher)
             .into(holder.ivImagen!!)*/
-
-        holder.ivImagen!!.setImageResource(R.mipmap.ic_launcher)
 
         holder.itemView.setOnClickListener {
             listener!!.onClick(holder.tvId!!.text.toString())

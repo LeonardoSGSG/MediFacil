@@ -44,11 +44,12 @@ class AnadirMedicamentosFragment: Fragment(), OnPredefinidaItemClickListener, On
         }
     }
 
-    override fun onClick(nombre: String, desc: String) {
+    override fun onClick(nombre: String, desc: String, imagen: String) {
         //Aca iria la lógica de pasar on un intent.putExtra el id para hacer la consulta en Room
         val intent = Intent(requireContext(), OtroMedicamentoActivity::class.java)
         intent.putExtra("nombreMedicamento", nombre)
         intent.putExtra("descMedicamento", desc)
+        intent.putExtra("imagenUrlMedicamento", imagen)
         startActivity(intent)
     }
 

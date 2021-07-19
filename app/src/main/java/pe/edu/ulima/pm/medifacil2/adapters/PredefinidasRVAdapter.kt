@@ -13,7 +13,7 @@ import pe.edu.ulima.pm.medifacil2.R
 import pe.edu.ulima.pm.medifacil2.models.beans.Predefinidas
 
 interface OnPredefinidaItemClickListener {
-    fun onClick(nombre: String, desc: String)
+    fun onClick(nombre: String, desc: String, imagen: String)
 }
 
 class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHolder> {
@@ -23,12 +23,14 @@ class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHo
         var tvNombre: TextView? = null
         var tvId: TextView? = null
         var tvDesc: TextView? = null
+        var tvImagenUrl: TextView? = null
 
         constructor(view : View) : super(view) {
             ivImagen = view.findViewById(R.id.iv_mcard_imagen)
             tvNombre = view.findViewById(R.id.tv_mcard_nombre)
             tvId = view.findViewById(R.id.tv_mcard_id)
             tvDesc = view.findViewById(R.id.tv_mcard_desc)
+            tvImagenUrl = view.findViewById(R.id.tv_mcard_imagenUrl)
         }
     }
 
@@ -54,6 +56,7 @@ class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHo
 
         holder.tvNombre!!.text = predef.nombre
         holder.tvDesc!!.text = predef.desc
+        holder.tvImagenUrl!!.text = predef.imagen
 
         Glide.with(context!!).load(predef.imagen)
             .centerCrop()
@@ -61,7 +64,7 @@ class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHo
             .into(holder.ivImagen!!)
 
         holder.itemView.setOnClickListener {
-            listener!!.onClick(holder.tvNombre!!.text.toString(),holder.tvDesc!!.text.toString())
+            listener!!.onClick(holder.tvNombre!!.text.toString(),holder.tvDesc!!.text.toString(), holder.tvImagenUrl!!.text.toString())
         }
     }
 

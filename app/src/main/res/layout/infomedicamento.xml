@@ -13,7 +13,7 @@
         android:textColor="@color/black"
         android:layout_weight="1"
         android:textAlignment="center"
-        android:textSize="30dp" />
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/tv_im_descripcion"
@@ -24,10 +24,17 @@
         android:textSize="16sp"
         android:paddingHorizontal="25dp"
         android:paddingVertical="15dp"
-        android:layout_weight="5"
+        android:layout_weight="4"
         android:layout_gravity="center"
-        android:scrollbars="vertical"
-        />
+        android:scrollbars="vertical"/>
+
+    <ImageView
+        android:id="@+id/iv_im_imagenMedicamento"
+        android:paddingHorizontal="15dp"
+        android:contentDescription="imagen del medicamento"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"/>
 
     <TextView
         android:id="@+id/tv_im_periodico"
