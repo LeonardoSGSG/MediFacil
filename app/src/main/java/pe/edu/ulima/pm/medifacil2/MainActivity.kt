@@ -1,6 +1,8 @@
 package pe.edu.ulima.pm.medifacil2
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -44,6 +46,19 @@ class MainActivity : AppCompatActivity() {
         val ft = supportFragmentManager.beginTransaction()
         ft.add(R.id.fl_amain_frameLayout, fragments[0])
         ft.commit()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("aaaee","aaaeee")
+        var sp = getSharedPreferences("AppData", Context.MODE_PRIVATE).getInt("cambio",0)
+        if(sp != 0){
+            var ed = getSharedPreferences("AppData", Context.MODE_PRIVATE).edit()
+            ed.putInt("cambio", 0); ed.apply()
+            recreate()
+
+        }
+
     }
 
 }

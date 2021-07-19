@@ -1,7 +1,9 @@
 package pe.edu.ulima.pm.medifacil2.fragments
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,12 +40,6 @@ class MedicamentosFragment: Fragment(), OnMedicamentoItemClickListener {
             onSuccessPRUEBA(med)
         })
 
-        //PRUEBAAAAAAAAAA, borrarlo e implementar lo real
-        /*listaMedicamentosPRUEBA.add(Medicamentos("Mitrozol", "El mitrozol es mitrozol", "a", 1))
-        listaMedicamentosPRUEBA.add(Medicamentos("Estazona", "El Estazona es Estazona", "a", 2))
-        listaMedicamentosPRUEBA.add(Medicamentos("Estepalo", "El Estepalo es Estepalo", "a", 3))*/
-        //onSuccessPRUEBA(listaMedicamentosPRUEBA)
-        /////////////////
     }
 
     //FUNCION DE PRUEBA, Borrar toda la funcion o lo que creas conveniente
@@ -62,5 +58,6 @@ class MedicamentosFragment: Fragment(), OnMedicamentoItemClickListener {
         intent.putExtra("idMedicamento", Id)
         startActivity(intent)
     }
+
 
 }

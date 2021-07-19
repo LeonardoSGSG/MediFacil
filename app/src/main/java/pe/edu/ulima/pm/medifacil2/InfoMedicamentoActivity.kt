@@ -1,5 +1,6 @@
 package pe.edu.ulima.pm.medifacil2
 
+import android.content.Context
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
@@ -45,6 +46,8 @@ class InfoMedicamentoActivity: AppCompatActivity() {
         })
         btEliminar!!.setOnClickListener{
             PredefinidasManager.getInstance().deleteMed(this, idMed.toInt(), {num:Int ->
+                var ed = getSharedPreferences("AppData", Context.MODE_PRIVATE).edit()
+                ed.putInt("cambio", 1); ed.apply()
                 this.finish()
             })
         }
