@@ -13,4 +13,6 @@ interface medicamentoDAO {
     fun findByMed(id: Int) : List<Medicamento>
     @Insert
     fun insert(med: Medicamento)
+    @Query("DELETE FROM Medicamento where id = :id")
+    fun delete(id: Int)
 }

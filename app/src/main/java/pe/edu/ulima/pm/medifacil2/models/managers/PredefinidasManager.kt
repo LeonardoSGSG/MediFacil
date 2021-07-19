@@ -105,5 +105,14 @@ class PredefinidasManager {
             callback(medList[0])
         }.start()
     }
+    fun deleteMed(context: Context, id: Int, callback: (Int) -> Unit){
+        val db = Room.databaseBuilder(context.applicationContext, AppDatabase::class.java, "mediFacil").fallbackToDestructiveMigration().build()
+        Thread{
+            val medDao = db.MedicamentoDAO()
+            medDao.delete(id)
+            db.close()
+            callback(1)
+        }.start()
+    }
 
 }

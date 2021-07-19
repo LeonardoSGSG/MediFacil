@@ -3,6 +3,7 @@ package pe.edu.ulima.pm.medifacil2
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.text.method.ScrollingMovementMethod
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -16,6 +17,7 @@ class InfoMedicamentoActivity: AppCompatActivity() {
     var tvNombre: TextView? = null
     var tvDesc: TextView? = null
     var ivMedicamento: ImageView? = null
+    var btEliminar: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +27,7 @@ class InfoMedicamentoActivity: AppCompatActivity() {
         tvDesc = findViewById(R.id.tv_im_descripcion)
         tvDesc!!.movementMethod = ScrollingMovementMethod()
         ivMedicamento = findViewById(R.id.iv_im_imagenMedicamento)
+        btEliminar = findViewById(R.id.bt_im_eliminar)
 
         val idMed = intent.getStringExtra("idMedicamento")
         Toast.makeText(this, idMed, Toast.LENGTH_SHORT).show()
@@ -40,6 +43,11 @@ class InfoMedicamentoActivity: AppCompatActivity() {
                 }
             }
         })
+        btEliminar!!.setOnClickListener{
+            PredefinidasManager.getInstance().deleteMed(this, idMed.toInt(), {num:Int ->
+                this.finish()
+            })
+        }
     }
 
 }
