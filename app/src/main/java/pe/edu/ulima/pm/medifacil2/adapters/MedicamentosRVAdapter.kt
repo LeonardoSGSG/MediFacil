@@ -51,7 +51,7 @@ class MedicamentosRVAdapter: RecyclerView.Adapter<MedicamentosRVAdapter.MyViewHo
         val medicamento = medicamentos!![position]
 
         holder.tvNombre!!.text = medicamento.nombre
-        holder.tvId!!.text = medicamento.id
+        holder.tvId!!.text = medicamento.id.toString()
 
         /*Glide.with(context!!).load(medicamento.imagen)
             .centerCrop()

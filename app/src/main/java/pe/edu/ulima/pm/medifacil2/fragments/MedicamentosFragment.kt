@@ -14,6 +14,7 @@ import pe.edu.ulima.pm.medifacil2.R
 import pe.edu.ulima.pm.medifacil2.adapters.MedicamentosRVAdapter
 import pe.edu.ulima.pm.medifacil2.adapters.OnMedicamentoItemClickListener
 import pe.edu.ulima.pm.medifacil2.models.beans.Medicamentos
+import pe.edu.ulima.pm.medifacil2.models.managers.PredefinidasManager
 import java.util.ArrayList
 
 class MedicamentosFragment: Fragment(), OnMedicamentoItemClickListener {
@@ -33,11 +34,15 @@ class MedicamentosFragment: Fragment(), OnMedicamentoItemClickListener {
         super.onViewCreated(view, savedInstanceState)
         rvMedicamentos = requireView().findViewById(R.id.rv_m_medicamentos)
 
+        PredefinidasManager.getInstance().getMedicamentosRoom(requireContext(), 0, {med:ArrayList<Medicamentos> ->
+            onSuccessPRUEBA(med)
+        })
+
         //PRUEBAAAAAAAAAA, borrarlo e implementar lo real
-        listaMedicamentosPRUEBA.add(Medicamentos("Mitrozol", "El mitrozol es mitrozol", "a", 1))
+        /*listaMedicamentosPRUEBA.add(Medicamentos("Mitrozol", "El mitrozol es mitrozol", "a", 1))
         listaMedicamentosPRUEBA.add(Medicamentos("Estazona", "El Estazona es Estazona", "a", 2))
-        listaMedicamentosPRUEBA.add(Medicamentos("Estepalo", "El Estepalo es Estepalo", "a", 3))
-        onSuccessPRUEBA(listaMedicamentosPRUEBA)
+        listaMedicamentosPRUEBA.add(Medicamentos("Estepalo", "El Estepalo es Estepalo", "a", 3))*/
+        //onSuccessPRUEBA(listaMedicamentosPRUEBA)
         /////////////////
     }
 

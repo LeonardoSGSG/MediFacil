@@ -8,11 +8,12 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import org.w3c.dom.Text
 import pe.edu.ulima.pm.medifacil2.R
 import pe.edu.ulima.pm.medifacil2.models.beans.Predefinidas
 
 interface OnPredefinidaItemClickListener {
-    fun onClick(Id : String)
+    fun onClick(nombre: String, desc: String)
 }
 
 class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHolder> {
@@ -21,11 +22,13 @@ class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHo
         var ivImagen: ImageView? = null
         var tvNombre: TextView? = null
         var tvId: TextView? = null
+        var tvDesc: TextView? = null
 
         constructor(view : View) : super(view) {
             ivImagen = view.findViewById(R.id.iv_mcard_imagen)
             tvNombre = view.findViewById(R.id.tv_mcard_nombre)
             tvId = view.findViewById(R.id.tv_mcard_id)
+            tvDesc = view.findViewById(R.id.tv_mcard_desc)
         }
     }
 
@@ -50,7 +53,7 @@ class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHo
         val predef = predefinidas!![position]
 
         holder.tvNombre!!.text = predef.nombre
-        holder.tvId!!.text = predef.id
+        holder.tvDesc!!.text = predef.desc
 
         Glide.with(context!!).load(predef.imagen)
             .centerCrop()
@@ -58,7 +61,7 @@ class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHo
             .into(holder.ivImagen!!)
 
         holder.itemView.setOnClickListener {
-            listener!!.onClick(holder.tvId!!.text.toString())
+            listener!!.onClick(holder.tvNombre!!.text.toString(),holder.tvDesc!!.text.toString())
         }
     }
 

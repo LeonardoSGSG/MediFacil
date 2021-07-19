@@ -48,7 +48,7 @@ class PredefinidasManager {
         })
     }
 
-    fun saveMedicamentos(context: Context, medicamentos: ArrayList<Medicamentos>, id: Int){
+    fun saveMedicamentos(context: Context, medicamentos: ArrayList<Medicamentos>, callback: (Int) -> Unit){
         val db = Room.databaseBuilder(context.applicationContext, AppDatabase::class.java,"mediFacil").fallbackToDestructiveMigration().build()
         Thread{
             val medDao = db.MedicamentoDAO()
@@ -63,6 +63,7 @@ class PredefinidasManager {
                 )
             }
             db.close()
+            callback(1)
         }.start()
     }
 

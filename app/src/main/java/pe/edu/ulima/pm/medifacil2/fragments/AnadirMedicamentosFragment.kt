@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import pe.edu.ulima.pm.medifacil2.InfoMedicamentoActivity
 import pe.edu.ulima.pm.medifacil2.OtroMedicamentoActivity
 import pe.edu.ulima.pm.medifacil2.R
 import pe.edu.ulima.pm.medifacil2.adapters.OnPredefinidaItemClickListener
@@ -34,18 +35,21 @@ class AnadirMedicamentosFragment: Fragment(), OnPredefinidaItemClickListener, On
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         rvPredefinidas = requireView().findViewById(R.id.rv_am_medicamentospredefinidos)
-        /*Descomentar esto para utilizar los servicios del api y traer las predefinidass
+        //Descomentar esto para utilizar los servicios del api y traer las predefinidass
         PredefinidasManager.getInstance().getPredefinidas(this)
-        */
+
         requireView().findViewById<Button>(R.id.bt_am_otromedicamento).setOnClickListener {
             val intent = Intent(requireContext(), OtroMedicamentoActivity::class.java)
             startActivity(intent)
         }
     }
 
-    override fun onClick(Id: String) {
+    override fun onClick(nombre: String, desc: String) {
         //Aca iria la lógica de pasar on un intent.putExtra el id para hacer la consulta en Room
-        Toast.makeText(requireContext(), Id, Toast.LENGTH_SHORT).show()
+        val intent = Intent(requireContext(), OtroMedicamentoActivity::class.java)
+        intent.putExtra("nombreMedicamento", nombre)
+        intent.putExtra("descMedicamento", desc)
+        startActivity(intent)
     }
 
     override fun onSuccess(predefinidas: ArrayList<Predefinidas>) {
