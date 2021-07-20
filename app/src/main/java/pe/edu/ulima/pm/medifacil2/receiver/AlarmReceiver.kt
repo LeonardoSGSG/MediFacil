@@ -12,6 +12,10 @@ import pe.edu.ulima.pm.medifacil2.R
 class AlarmReceiver: BroadcastReceiver() {
 
     override fun onReceive(context: Context?, intent: Intent?) {
+
+        //recogemos el valor del nombre recibido desde el intent.putStringExtra
+        val nombre = intent!!.getStringExtra("nombre")
+
         val id = System.currentTimeMillis()
         val i = Intent(context, DestinationActivity::class.java)
         i.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
@@ -20,7 +24,7 @@ class AlarmReceiver: BroadcastReceiver() {
         val builder = NotificationCompat.Builder(context!!, "MediFacil")
             .setSmallIcon(R.drawable.ic_launcher_background)
             .setContentTitle("Notificación de medicina")
-            .setContentText("Hora de tomar una medicina")
+            .setContentText("Hora de tomar " + nombre)
             .setAutoCancel(true)
             .setDefaults(NotificationCompat.DEFAULT_ALL)
             .setPriority(NotificationCompat.PRIORITY_HIGH)

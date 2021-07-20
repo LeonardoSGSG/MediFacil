@@ -82,7 +82,7 @@ class OtroMedicamentoActivity: AppCompatActivity(){
             if(!TextUtils.isEmpty(etNombre!!.text.toString()) && !TextUtils.isEmpty(etDesc!!.text.toString())){
                 val med : ArrayList<Medicamentos> = ArrayList()
                 val imagePath = bringImageFile()
-                val periodico = crearAlarmas()
+                val periodico = crearAlarmas(etNombre!!.text.toString())
                 med.add(Medicamentos(etNombre!!.text.toString(), etDesc!!.text.toString(), imagePath, 0, periodico))
                 PredefinidasManager.getInstance().saveMedicamentos(this, med,{ num:Int ->
                     this.finish()
@@ -98,7 +98,7 @@ class OtroMedicamentoActivity: AppCompatActivity(){
 
     }
 
-    private fun crearAlarmas(): String{
+    private fun crearAlarmas(nombre: String): String{
         if (!TextUtils.isEmpty(etPeriodico!!.text.toString())){
             val horasLista = separarElementos(etPeriodico!!.text.toString())
             for(hora in horasLista){
@@ -107,7 +107,10 @@ class OtroMedicamentoActivity: AppCompatActivity(){
                 calendar!![Calendar.MINUTE] = compo[1].toInt()
                 calendar!![Calendar.SECOND] = 0
                 calendar!![Calendar.MILLISECOND] = 0
+                //hacemos intent al AlarmReciever
                 val intent = Intent(this, AlarmReceiver::class.java)
+                //pasamos el dato del nombre de la medicina
+                intent.putExtra("nombre", nombre)
                 pendingIntent = PendingIntent.getBroadcast(this, System.currentTimeMillis().toInt(), intent, 0)
                 alarmManager!!.setRepeating(AlarmManager.RTC_WAKEUP, calendar!!.timeInMillis, AlarmManager.INTERVAL_DAY, pendingIntent)
             }

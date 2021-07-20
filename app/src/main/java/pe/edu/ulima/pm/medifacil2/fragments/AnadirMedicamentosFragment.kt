@@ -34,35 +34,38 @@ class AnadirMedicamentosFragment: Fragment(), OnPredefinidaItemClickListener, On
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //identificamos el recyclerView del fragment
         rvPredefinidas = requireView().findViewById(R.id.rv_am_medicamentospredefinidos)
-        //Descomentar esto para utilizar los servicios del api y traer las predefinidass
+        //solicitamos la instancia del manager
         PredefinidasManager.getInstance().getPredefinidas(this)
-
+        //asignamos la funcionalidad del boton otro medicamento para crear un medicamento personalizado
         requireView().findViewById<Button>(R.id.bt_am_otromedicamento).setOnClickListener {
+            //llamamos al otro activity donde se crea un nuevo medicamento
             val intent = Intent(requireContext(), OtroMedicamentoActivity::class.java)
             startActivity(intent)
         }
     }
-
+    //funcion onClick de cada elemento del recyclerView traidos de la api
     override fun onClick(nombre: String, desc: String, imagen: String) {
-        //Aca iria la lógica de pasar on un intent.putExtra el id para hacer la consulta en Room
+        //pasamos con un intent.putExtra el id, nombre e imagen al siguiente activity
         val intent = Intent(requireContext(), OtroMedicamentoActivity::class.java)
         intent.putExtra("nombreMedicamento", nombre)
         intent.putExtra("descMedicamento", desc)
         intent.putExtra("imagenUrlMedicamento", imagen)
         startActivity(intent)
     }
-
+    //funcion a realizar cuando es exitosa la respuesta del api
     override fun onSuccess(predefinidas: ArrayList<Predefinidas>) {
+        //corremos en un uiThread la generación del recyclerview con los datos de la api
         requireActivity().runOnUiThread {
             val rvPredefinidasAdapter = PredefinidasRVAdapter(predefinidas, this, requireContext())
             rvPredefinidas.layoutManager = LinearLayoutManager(requireContext())
             rvPredefinidas.adapter = rvPredefinidasAdapter
         }
     }
-
+    //funcion en caso no resulta exitosa la peticion de internet
     override fun onError(msg: String) {
-        TODO("Not yet implemented")
+        Toast.makeText(context, "sin conexion a internet", Toast.LENGTH_SHORT).show()
     }
 
 }

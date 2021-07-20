@@ -34,15 +34,16 @@ class MedicamentosFragment: Fragment(), OnMedicamentoItemClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        //identificamos el recyclerView del fragment
         rvMedicamentos = requireView().findViewById(R.id.rv_m_medicamentos)
-
+        //Conseguimos la instancia del manager y sacamos los medicamentos guardados de room, devolviendo los medicamentos del room en una lista
         PredefinidasManager.getInstance().getMedicamentosRoom(requireContext(), 0, {med:ArrayList<Medicamentos> ->
             onSuccessPRUEBA(med)
         })
 
     }
 
-    //FUNCION DE PRUEBA, Borrar toda la funcion o lo que creas conveniente
+    //Funcion para cargar el recyclerView del fragment con una lista de medicamentos
     private fun onSuccessPRUEBA(listaPRUEBA: ArrayList<Medicamentos>){
         requireActivity().runOnUiThread {
             val rvMedicamentosAdapter = MedicamentosRVAdapter(listaPRUEBA, this, requireContext())
@@ -55,6 +56,7 @@ class MedicamentosFragment: Fragment(), OnMedicamentoItemClickListener {
         //En la otra actividad se hara la consulta a room y se mostrara la info de medicamento con este Id que estamos
         //pasando
         val intent = Intent(requireContext(), InfoMedicamentoActivity::class.java)
+        //pasamos el id del medicamento para cargar la pagina de info
         intent.putExtra("idMedicamento", Id)
         startActivity(intent)
     }
