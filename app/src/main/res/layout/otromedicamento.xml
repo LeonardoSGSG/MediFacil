@@ -100,7 +100,7 @@
             android:layout_weight="2"
             android:scrollbars="vertical"
             android:textColor="@color/black"
-            android:hint="ej. 9, 14.30 (para 9am y 2pm)"
+            android:hint="ej. 9:00,14:03 (para 9am y 2:03pm)"
             android:inputType="textMultiLine"
             android:textSize="17sp"/>
     </LinearLayout>

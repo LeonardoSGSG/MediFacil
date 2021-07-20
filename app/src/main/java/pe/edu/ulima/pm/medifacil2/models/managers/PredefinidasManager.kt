@@ -79,7 +79,7 @@ class PredefinidasManager {
                         m.desc,
                         m.imagen,
                         m.id
-                )
+                    )
                 )
 
             }
