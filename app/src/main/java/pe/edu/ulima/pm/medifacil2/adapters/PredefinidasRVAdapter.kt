@@ -24,7 +24,8 @@ class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHo
         var tvId: TextView? = null
         var tvDesc: TextView? = null
         var tvImagenUrl: TextView? = null
-
+        //Constructor que se usará para el view de cada medicamento predefinido,
+        //siendo sus elementos una imagen, un nombre y un id
         constructor(view : View) : super(view) {
             ivImagen = view.findViewById(R.id.iv_mcard_imagen)
             tvNombre = view.findViewById(R.id.tv_mcard_nombre)
@@ -38,6 +39,8 @@ class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHo
     private var listener : OnPredefinidaItemClickListener? = null
     private var context : Context? = null
 
+    //Constructor de la clase PredefinidasRVAdapter, el cual recibe como parámetro la lista de
+    //medicamentos que queremos mostrar, así como sus listener y context
     constructor(predefinidas : ArrayList<Predefinidas>,
                 listener : OnPredefinidaItemClickListener,
                 context : Context) : super(){
@@ -45,19 +48,23 @@ class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHo
         this.listener = listener
         this.context = context
     }
-
+    //Se encarga de crear la vista por cada elemento en la lista de medicamentos
+    //solo se llama una vez
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.medicamentocard, parent, false)
         return MyViewHolder(view)
     }
-
+    //Para enlazar las vistas con los valores que queremos mostrar para cada medicamento
+    //en determinada posicion
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        //obtengo un medicamento predefinido en cierta posicion
         val predef = predefinidas!![position]
-
+        //Llena los textviews con los valores del medicamento en la posicion correspondiente
         holder.tvNombre!!.text = predef.nombre
         holder.tvDesc!!.text = predef.desc
         holder.tvImagenUrl!!.text = predef.imagen
 
+        //Se obtiene la imagen del medicamento obtenido mediante la API
         Glide.with(context!!).load(predef.imagen)
             .centerCrop()
             .placeholder(R.mipmap.ic_launcher)
@@ -67,7 +74,7 @@ class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHo
             listener!!.onClick(holder.tvNombre!!.text.toString(),holder.tvDesc!!.text.toString(), holder.tvImagenUrl!!.text.toString())
         }
     }
-
+    //Retorna la cantidad de medicamentos disponibles para agregar que mostraremos en pantalla
     override fun getItemCount(): Int {
         return predefinidas!!.size
     }
