@@ -15,6 +15,16 @@ import java.util.ArrayList
 
 class InfoMedicamentoActivity: AppCompatActivity() {
 
+    /*
+     *
+     * Integrantes:
+     * Diego Antonio Esquivel Patiño -> 20170532
+     * Leonardo Sipion Guillen -> 20171484
+     * Fabricio Sotelo Parra -> 20171497
+     *
+     *
+     */
+
     var tvNombre: TextView? = null
     var tvDesc: TextView? = null
     var ivMedicamento: ImageView? = null

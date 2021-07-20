@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import pe.edu.ulima.pm.medifacil2.models.persistencia.entities.Medicamento
 
+//DAO que contiene las distintas querys al SQLite de medicamentos
 @Dao
 interface medicamentoDAO {
     @Query("SELECT * FROM Medicamento")

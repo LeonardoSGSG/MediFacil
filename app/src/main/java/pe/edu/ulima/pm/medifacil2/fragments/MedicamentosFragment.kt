@@ -21,6 +21,16 @@ import java.util.ArrayList
 
 class MedicamentosFragment: Fragment(), OnMedicamentoItemClickListener {
 
+    /*
+     *
+     * Integrantes:
+     * Diego Antonio Esquivel Patiño -> 20170532
+     * Leonardo Sipion Guillen -> 20171484
+     * Fabricio Sotelo Parra -> 20171497
+     *
+     *
+     */
+
     private lateinit var rvMedicamentos: RecyclerView
     val listaMedicamentosPRUEBA: ArrayList<Medicamentos> = ArrayList()
 

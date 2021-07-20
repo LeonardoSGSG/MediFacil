@@ -7,6 +7,7 @@ import java.util.ArrayList
 
 interface PredefinidasService {
 
+    //Llamada del api y definimos que objeto traemos que será un ArrayList
     @GET("/api/predefinidas")
     fun getPredefinidas(): Call<ArrayList<Predefinidas>>
 

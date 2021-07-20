@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+//Entidad Medicamento en Room
 @Entity
 data class Medicamento(
     @PrimaryKey(autoGenerate = true) val id: Int,

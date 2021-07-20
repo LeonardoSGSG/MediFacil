@@ -16,6 +16,17 @@ import pe.edu.ulima.pm.medifacil2.fragments.AnadirMedicamentosFragment
 import pe.edu.ulima.pm.medifacil2.fragments.MedicamentosFragment
 
 class MainActivity : AppCompatActivity() {
+
+    /*
+     *
+     * Integrantes:
+     * Diego Antonio Esquivel Patiño -> 20170532
+     * Leonardo Sipion Guillen -> 20171484
+     * Fabricio Sotelo Parra -> 20171497
+     *
+     *
+     */
+
     //iniciamos las variables del activity
     var fragments : ArrayList<Fragment> = ArrayList()
     private lateinit var bottomNavView: BottomNavigationView
@@ -53,6 +64,7 @@ class MainActivity : AppCompatActivity() {
         ft.add(R.id.fl_amain_frameLayout, fragments[0])
         ft.commit()
     }
+
     // funcion cuando se resuma el activity
     override fun onResume() {
         super.onResume()
@@ -63,9 +75,7 @@ class MainActivity : AppCompatActivity() {
             var ed = getSharedPreferences("AppData", Context.MODE_PRIVATE).edit()
             ed.putInt("cambio", 0); ed.apply()
             recreate()
-
         }
-
     }
 
 }

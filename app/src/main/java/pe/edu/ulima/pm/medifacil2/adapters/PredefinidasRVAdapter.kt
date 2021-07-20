@@ -24,7 +24,7 @@ class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHo
         var tvId: TextView? = null
         var tvDesc: TextView? = null
         var tvImagenUrl: TextView? = null
-        //Constructor que se usará para el view de cada medicamento predefinido,
+        //Constructor que se usará para el viewHolder de cada medicamento predefinido,
         //siendo sus elementos una imagen, un nombre y un id
         constructor(view : View) : super(view) {
             ivImagen = view.findViewById(R.id.iv_mcard_imagen)
@@ -70,6 +70,7 @@ class PredefinidasRVAdapter: RecyclerView.Adapter<PredefinidasRVAdapter.MyViewHo
             .placeholder(R.mipmap.ic_launcher)
             .into(holder.ivImagen!!)
 
+        //Se establece que información del holder se va a pasar por la interfaz cuando se haga click
         holder.itemView.setOnClickListener {
             listener!!.onClick(holder.tvNombre!!.text.toString(),holder.tvDesc!!.text.toString(), holder.tvImagenUrl!!.text.toString())
         }

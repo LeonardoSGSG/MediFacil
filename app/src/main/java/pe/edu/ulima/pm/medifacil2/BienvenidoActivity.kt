@@ -8,6 +8,17 @@ import androidx.appcompat.app.AppCompatActivity
 
 class BienvenidoActivity: AppCompatActivity() {
 
+    /*
+     *
+     * Integrantes:
+     * Diego Antonio Esquivel Patiño -> 20170532
+     * Leonardo Sipion Guillen -> 20171484
+     * Fabricio Sotelo Parra -> 20171497
+     *
+     *
+     */
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.bienvenido)

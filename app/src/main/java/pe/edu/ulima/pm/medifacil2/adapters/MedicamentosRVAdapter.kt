@@ -79,6 +79,7 @@ class MedicamentosRVAdapter: RecyclerView.Adapter<MedicamentosRVAdapter.MyViewHo
             .placeholder(R.mipmap.ic_launcher)
             .into(holder.ivImagen!!)*/
 
+        //Establecemos que información se va a pasar por la interface cuando se haga click
         holder.itemView.setOnClickListener {
             listener!!.onClick(holder.tvId!!.text.toString())
         }

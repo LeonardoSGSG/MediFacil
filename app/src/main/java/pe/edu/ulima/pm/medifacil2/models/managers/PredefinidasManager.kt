@@ -13,6 +13,7 @@ import retrofit2.Response
 import retrofit2.create
 import java.util.ArrayList
 
+//Interface callback para cuando se obtengan todos los predefinidos del API
 interface OnGetPredefinidasDone{
     fun onSuccess(predefinidas: ArrayList<Predefinidas>)
     fun onError(msg: String)
@@ -20,6 +21,7 @@ interface OnGetPredefinidasDone{
 
 class PredefinidasManager {
 
+    //Singleton del manager que continene la instancia "Predefinidas"
     companion object{
         private var instance : PredefinidasManager? = null
 
@@ -30,10 +32,12 @@ class PredefinidasManager {
             return instance!!
         }
     }
+
     //funcion para traer los elementos del api
     fun getPredefinidas(callback: OnGetPredefinidasDone) {
         val retrofit = ConnectionManager.getInstance().getRetrofit()
         val devicesService = retrofit.create<PredefinidasService>()
+        //Se encola la petición del API y se envia el arraylist mediante Callback
         devicesService.getPredefinidas().enqueue(object : Callback<ArrayList<Predefinidas>> {
             override fun onResponse(call: Call<ArrayList<Predefinidas>>, response: Response<ArrayList<Predefinidas>>) {
                 if (response.code() == 200 && response.body() != null) {
@@ -47,7 +51,8 @@ class PredefinidasManager {
             }
         })
     }
-    //funcion para guardar medicamentos en el room
+
+    //funcion para guardar medicamentos en el SQLite Room
     fun saveMedicamentos(context: Context, medicamentos: ArrayList<Medicamentos>, callback: (Int) -> Unit){
         //conexion al room
         val db = Room.databaseBuilder(context.applicationContext, AppDatabase::class.java,"mediFacil").fallbackToDestructiveMigration().build()
@@ -66,10 +71,11 @@ class PredefinidasManager {
                 )
             }
             db.close()
-            //elemento a devolver en callback
+            //elemento a devolver en callback para indicar que se guardaron
             callback(1)
         }.start()
     }
+
     //funcion para traer todos los medicamentos del room
     fun getMedicamentosRoom(context: Context, id: Int, callback: (ArrayList<Medicamentos>) -> Unit){
         //conexion al room
@@ -77,7 +83,7 @@ class PredefinidasManager {
         Thread{
             val medDao = db.MedicamentoDAO()
             val medList = ArrayList<Medicamentos>()
-            //se traen todos los medicamentos del room y se trabaja uno por uno
+            //se traen todos los medicamentos del room y se agrega uno por uno a la lista medList
             medDao.findAll().forEach{ m : Medicamento ->
                 medList.add(
                     Medicamentos(
@@ -90,7 +96,7 @@ class PredefinidasManager {
                 )
 
             }
-            //elemento a devolver en callback
+            //Se devuelve en callback la lista
             callback(medList)
         }.start()
     }
