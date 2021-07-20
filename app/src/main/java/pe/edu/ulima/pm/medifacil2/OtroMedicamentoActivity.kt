@@ -83,7 +83,7 @@ class OtroMedicamentoActivity: AppCompatActivity(){
                 val med : ArrayList<Medicamentos> = ArrayList()
                 val imagePath = bringImageFile()
                 val periodico = crearAlarmas()
-                med.add(Medicamentos(etNombre!!.text.toString(), etDesc!!.text.toString(), imagePath, 0, /*periodico*/))
+                med.add(Medicamentos(etNombre!!.text.toString(), etDesc!!.text.toString(), imagePath, 0, periodico))
                 PredefinidasManager.getInstance().saveMedicamentos(this, med,{ num:Int ->
                     this.finish()
                 })

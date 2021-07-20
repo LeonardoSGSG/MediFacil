@@ -58,7 +58,8 @@ class PredefinidasManager {
                         0,
                         m.nombre,
                         m.desc,
-                        m.imagen
+                        m.imagen,
+                        m.periodico
                     )
                 )
             }
@@ -78,7 +79,8 @@ class PredefinidasManager {
                         m.nombre,
                         m.desc,
                         m.imagen,
-                        m.id
+                        m.id,
+                        m.periodico
                     )
                 )
 
@@ -98,7 +100,8 @@ class PredefinidasManager {
                         m.nombre,
                         m.desc,
                         m.imagen,
-                        m.id
+                        m.id,
+                        m.periodico
                     )
                 )
             }

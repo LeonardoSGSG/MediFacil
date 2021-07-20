@@ -43,8 +43,7 @@
         android:gravity="center"
         android:textSize="17sp"
         android:textColor="@color/black"
-        android:layout_height="0dp"
-        android:text="Periódico (24 h.): 10, 16, 20, 2 ,6, 8.30" />
+        android:layout_height="0dp" />
 
     <Button
         android:id="@+id/bt_im_eliminar"
